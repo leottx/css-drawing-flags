@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
 /* Variables */
 :root {
   --blue: #0000ff;
@@ -22,9 +26,15 @@
   align-items: center;
   background-color: var(--dark-gray);
   display: flex;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
   justify-content: center;
-  padding: 10vw;
+  padding: 5.2rem 10vw;
+}
+
+.title {
+  color: var(--white);
+  margin-bottom: 10vw;
 }
 
 .container__inner {
@@ -32,6 +42,7 @@
   flex-direction: column;
   gap: 8vw;
   width: 100%;
+  max-width: 1048px;
 }
 
 .flag {
@@ -120,4 +131,23 @@
   left: 6.5%;
   position: absolute;
   top: 11%;
+}
+
+@media screen and (min-width: 640px) {
+  .container__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .title {
+    margin-bottom: 3.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .title {
+    margin-bottom: 3.2rem;
+    font-size: 3.6rem;
+  }
 }
