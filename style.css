@@ -1,0 +1,123 @@
+/* Reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables */
+:root {
+  --blue: #0000ff;
+  --dark-gray: #1e1e1e;
+  --green: #008000;
+  --red: #ff0000;
+  --white: #ffffff;
+  --yellow: #ffff00;
+}
+
+/* Flags */
+.container {
+  align-items: center;
+  background-color: var(--dark-gray);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  padding: 10vw;
+}
+
+.container__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8vw;
+  width: 100%;
+}
+
+.flag {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+.flag__japan {
+  background-color: var(--white);
+  position: relative;
+}
+
+.flag__japan::before {
+  aspect-ratio: 1 / 1;
+  background-color: var(--red);
+  border-radius: 50%;
+  content: "";
+  height: 60%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flag__brazil {
+  background-color: var(--green);
+  position: relative;
+}
+
+.flag__brazil::before {
+  aspect-ratio: 5/3;
+  background-color: var(--yellow);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.flag__brazil::after {
+  aspect-ratio: 1/1;
+  background-color: var(--blue);
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 32.5%;
+}
+
+.flag__chile {
+  background: linear-gradient(to bottom, var(--white) 50%, var(--red) 50%);
+  position: relative;
+}
+
+.flag__chile::before {
+  aspect-ratio: 1/1;
+  background-color: var(--blue);
+  content: "";
+  height: 50%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.flag__chile::after {
+  aspect-ratio: 1/1;
+  background-color: var(--white);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  content: "";
+  height: 27.4%;
+  left: 6.5%;
+  position: absolute;
+  top: 11%;
+}
